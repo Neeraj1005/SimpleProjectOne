@@ -15,6 +15,11 @@ class LogCheck
      */
     public function handle($request, Closure $next)
     {
+        //print_r(\Session::get('logData')); //add session 
+        if(empty(\Session::get('logData')))
+        {
+            return redirect('/create');
+        }
         return $next($request);
     }
 }

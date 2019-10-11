@@ -1,6 +1,7 @@
 @extends('layout')
-
 @section('content')
+
+<!--This is used for listing the user-->
 <h1>List User</h1>
 <div>
 	<ul>

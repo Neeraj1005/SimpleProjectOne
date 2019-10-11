@@ -10,7 +10,7 @@ class Users extends Controller
 {
 	public function list()
 	{
-		return Session::get('logData');
+		//return Session::get('logData');
 
 		$user=User::all();
 		return view('userlist',['user'=>$user]);
@@ -46,6 +46,7 @@ class Users extends Controller
 		$result = $user->save();
 		if($result)
 		{
+			$req->session()->put('logData',[$req->input()]);
 			return redirect('/list');
 		}
 	}
